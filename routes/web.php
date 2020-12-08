@@ -16,3 +16,19 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+use App\Http\Controllers\BisaController;
+
+Route::get("/uts", [BisaController::class, "wow"]);
+
+Route::get("/hallo", [BisaController::class, "uwu"]);
+
+use App\Http\Controllers\UtsController;
+Route::get("/tes/satu", [UtsController::class, "pertama"]);
+Route::get("/tes/dua", [UtsController::class, "kedua"]);
+Route::get("/tes/tiga", [UtsController::class, "ketiga"]);
+Route::get("/tes/empat", [UtsController::class, "keempat"]);
+
+use App\Http\Controllers\FormController;
+Route::get("/pendaftar/baru", [FormController::class, "baru"])->name("pendaftar_baru");
+Route::post("/pendaftar/kuy", [FormController::class, "kuy"])->name("pendaftar_kuy");
